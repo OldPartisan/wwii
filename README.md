@@ -1,6 +1,9 @@
 # Вторая мировая: интерактивная карта 1939–1945
 
-**Демо:** https://wwii-map.pages.dev
+**Демо:** https://oldpartisan.github.io/wwii/
+
+**Репозиторий:** https://github.com/OldPartisan/wwii  
+**Резервный деплой:** https://wwii-map.pages.dev
 
 Современная веб-реконструкция механики проекта «Победители» (Flash, 2018), расширенная
 до полного театра Второй мировой войны: от нападения на Польшу 1 сентября 1939 года
@@ -54,6 +57,20 @@
 современная политическая карта здесь только мешают.
 
 ## Деплой
+
+### GitHub Pages
+
+Сайт раздаётся из ветки `gh-pages` (project site `oldpartisan.github.io/wwii/`).
+Сборка под подпуть делается скриптом:
+
+```bash
+node scripts/build-pages.mjs
+```
+
+Он собирает `dist/`, копирует в `dist-pages/`, переводит абсолютные `/assets`, `/data`, `/img`
+в относительные и добавляет `.nojekyll`. Дальше содержимое `dist-pages/` коммитится в `gh-pages`.
+
+### Cloudflare Pages (резерв)
 
 ```bash
 pnpm build
